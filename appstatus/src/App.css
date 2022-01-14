@@ -1,0 +1,51 @@
+.App {
+  text-align: center;
+  -webkit-animation: name 1s; /* Safari, Chrome and Opera > 13.1 */
+  -moz-animation: name 1s; /* Firefox < 16 */
+  -ms-animation: name 1s; /* Internet Explorer */
+  -o-animation: name 1s; /* Opera < 13.1 */
+  animation: name 1s;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}    
+
+.App-header .status {
+  background-color: #474c57;
+  height:200px;
+  width:250px;
+  margin: 35px;
+  border-radius: 10%;
+  display: flex;
+  flex-direction: column;
+}
+
+.App-header .refresh {
+  width: 100vw;
+  height: 80px;
+}
+
+.refresh a {
+  -ms-transition: .4s ease-in-out;
+  -webkit-transition: .4s ease-in-out;
+  color:green;
+  text-decoration: none;
+}
+
+
+.refresh a:hover {
+  -ms-transform: rotate(360deg); /* IE 9 */
+  -webkit-transform: rotate(360deg); /* Chrome, Safari, Opera */
+  transform: rotate(360deg);
+  color: lightgreen;
+  cursor: pointer;
+}
+
