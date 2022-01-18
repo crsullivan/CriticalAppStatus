@@ -14,26 +14,151 @@ function App() {
   const [mitelStatus, setmitelStatus] = useState([])
   const [tamaracStatus, settamaracStatus] = useState([])
   const [zoomStatus, setzoomStatus] = useState()
+  const [usersIP, setusersIP] = useState()
 
   const proxy = 'https://criticalappcorsproxy.herokuapp.com/'
+
+  async function getusersIP() {
+    const result = await axios
+    .get(proxy + 'https://api.ipify.org?format=json')
+    .then(res => {
+      const usersIP = res.data.ip
+      setusersIP(usersIP)
+      console.log(usersIP)
+    })
+  }
+  useEffect(() => {
+    getusersIP();
+    }, []);
+
 
   async function getSalesforceStatus() {
     const result = await axios
     .get(proxy + "https://www.salesforce.com/")
     .then(res => {
-      console.log(res.status, res.statusText)
       const salesforceStatus = res.status + ' ' + res.statusText
       setsalesforceStatus(salesforceStatus)
     })
     .catch(error => {
-        console.log(error)
-        alert(error)
+      const salesforceStatus = error.response.status + ' ' + error.response.statusText
+      setsalesforceStatus(salesforceStatus)    })
+  }
+  useEffect(() => {
+    getSalesforceStatus();
+    }, []);
+
+  async function getTCIStatus() {
+    const result = await axios
+    .get(proxy + "https://tciwealth.com/")
+    .then(res => {
+      const tciStatus = res.status + ' ' + res.statusText
+      settciStatus(tciStatus)
+    })
+    .catch(error => {
+      const tciStatus = error.response.status + ' ' + error.response.statusText
+      settciStatus(tciStatus)
     })
   }
-useEffect(() => {
-  getSalesforceStatus();
-  }, []);
+  useEffect(() => {
+    getTCIStatus();
+    }, []);
 
+  async function getBoxStatus() {
+    const result = await axios
+    .get(proxy + "https://box.com/")
+    .then(res => {
+      const boxStatus = res.status + ' ' + res.statusText
+      setboxStatus(boxStatus)
+    })
+    .catch(error => {
+      const boxStatus = error.response.status + ' ' + error.response.statusText
+      setboxStatus(boxStatus)
+    })
+  }
+  useEffect(() => {
+    getBoxStatus();
+    }, []);
+
+  async function getSchwabStatus() {
+    const result = await axios
+    .get(proxy + "https://schwab.com/")
+    .then(res => {
+      const schwabStatus = res.status + ' ' + res.statusText
+      setschwabStatus(schwabStatus)
+    })
+    .catch(error => {
+      const schwabStatus = error.response.status + ' ' + error.response.statusText
+      setschwabStatus(schwabStatus)
+    })
+  }
+  useEffect(() => {
+    getSchwabStatus();
+    }, []);
+
+  async function getOfficeStatus() {
+    const result = await axios
+    .get(proxy + "https://www.office.com/")
+    .then(res => {
+      const officeStatus = res.status + ' ' + res.statusText
+      setofficeStatus(officeStatus)
+    })
+    .catch(error => {
+      const officeStatus = error.response.status + ' ' + error.response.statusText
+      setofficeStatus(officeStatus)
+    })
+  }
+  useEffect(() => {
+    getOfficeStatus();
+    }, []);
+
+  async function getTDAStatus() {
+    const result = await axios
+    .get(proxy + "https://www.tdainstitutional.com/")
+    .then(res => {
+      const tdaStatus = res.status + ' ' + res.statusText
+      settdaStatus(tdaStatus)
+    })
+    .catch(error => {
+      const tdaStatus = error.response.status + ' ' + error.response.statusText
+      settdaStatus(tdaStatus)
+    })
+  }
+  useEffect(() => {
+    getTDAStatus();
+    }, []);
+
+  async function getLastPassStatus() {
+    const result = await axios
+    .get(proxy + "https://www.lastpass.com/")
+    .then(res => {
+      const lastpassStatus = res.status + ' ' + res.statusText
+      setlastpassStatus(lastpassStatus)
+    })
+    .catch(error => {
+      const lastpassStatus = error.response.status + ' ' + error.response.statusText
+      setlastpassStatus(lastpassStatus)
+    })
+  }
+  useEffect(() => {
+    getLastPassStatus();
+    }, []);
+
+  async function getMitelStatus() {
+    const result = await axios
+    .get(proxy + "mitel.com")
+    .then(res => {
+      const mitelStatus = res.status + ' ' + res.statusText
+      setmitelStatus(mitelStatus)
+    })
+    .catch(error => {
+      const mitelStatus = error.response.status + ' ' + error.response.statusText
+      setmitelStatus(mitelStatus)
+      console.log(mitelStatus)
+    })
+  }
+  useEffect(() => {
+    getMitelStatus();
+    }, []);
 
   return (
     <div className="App">
@@ -46,41 +171,48 @@ useEffect(() => {
         </div>
         <div className='status'>
           <h2 className='title'>
-            Salesforce
+            TCI
           </h2>
+          <p>{tciStatus}</p>
         </div>
         <div className='status'>
         <h2 className='title'>
-            Salesforce
+            Box
         </h2>
+        <p>{boxStatus}</p>
         </div>
         <div className='status'>
         <h2 className='title'>
-            Salesforce
+            Schwab
         </h2>
+        <p>{schwabStatus}</p>
         </div>
         <div className='status'>
         <h2 className='title'>
-            Salesforce
+            Office
         </h2>
+        <p>{officeStatus}</p>
         </div>
         <div className='refresh'>
             <a className="fas fa-sync-alt" href="http://localhost:3000/"></a>
         </div>
         <div className='status'>
           <h2 className='title'>
-            Salesforce
+            TDA
           </h2>
+          <p>{tdaStatus}</p>
         </div>
         <div className='status'>
           <h2 className='title'>
-            Salesforce
+            LastPass
           </h2>
+          <p>{lastpassStatus}</p>
         </div>
         <div className='status'>
           <h2 className='title'>
-            Salesforce
+            Mitel
           </h2>
+          <p>{mitelStatus}</p>
         </div>
         <div className='status'>
           <h2 className='title'>
