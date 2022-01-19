@@ -21,7 +21,7 @@ function App() {
 
   async function getSalesforceStatus() {
     const result = await axios
-    .get(proxy + "https://www.salesforce.com/")
+    .get(proxy + "https://status.salesforce.com/instances/NA160")
     .then(res => {
       const salesforceStatus = JSON.stringify(res.status + ' ' + res.statusText)
       setsalesforceStatus(salesforceStatus)
