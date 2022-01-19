@@ -1,3 +1,8 @@
+.Wait {
+  height: 100vh;
+  background-color: black;
+}
+
 .App {
   text-align: center;
   -webkit-animation: name 1s; /* Safari, Chrome and Opera > 13.1 */
@@ -14,15 +19,26 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 1.5rem;
+  /* font-size: calc(10px + 2vmin); */
   color: white;
 }    
 
-.App-header .status {
+.App-header .statusA {
   background-color: #474c57;
   height:200px;
   width:250px;
-  margin: 35px;
+  margin: 35px 35px 0 35px;
+  border-radius: 10%;
+  display: flex;
+  flex-direction: column;
+}
+
+.App-header .statusB {
+  background-color: #474c57;
+  height:200px;
+  width:250px;
+  margin: 0 35px 35px 35px;
   border-radius: 10%;
   display: flex;
   flex-direction: column;
@@ -30,7 +46,10 @@
 
 .App-header .refresh {
   width: 100vw;
-  height: 80px;
+  height: 50px;
+  margin: auto;
+  text-align: center;
+
 }
 
 .refresh a {
@@ -38,6 +57,7 @@
   -webkit-transition: .4s ease-in-out;
   color:green;
   text-decoration: none;
+  padding: 15px 0;
 }
 
 
@@ -49,3 +69,10 @@
   cursor: pointer;
 }
 
+h2.title {
+  margin-bottom: 5px;
+}
+
+p {
+  margin: 5px;
+} 
