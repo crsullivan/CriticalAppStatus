@@ -25,8 +25,6 @@ function App() {
     .then(res => {
       const salesforceStatus = JSON.stringify(res.status + ' ' + res.statusText)
       setsalesforceStatus(salesforceStatus)
-      console.log(salesforceStatus)
-
     })
     .catch(error => {
       const salesforceStatus = JSON.stringify(error.response.status + ' ' + error.response.statusText)
@@ -138,7 +136,6 @@ function App() {
     .then(res => {
       const usersIP = res.data.ip
       setusersIP(usersIP)
-      console.log(usersIP)
     })
   }
   useEffect(() => {
@@ -183,7 +180,6 @@ function App() {
     getZoomStatus();
     }, []);
 
-console.log(salesforceStatus)
 
   return (
     <div className="App">
@@ -192,31 +188,31 @@ console.log(salesforceStatus)
           <h2 className='title'>
             Salesforce
           </h2>
-          <p style={salesforceStatus.includes("200") ? {color:'yellowgreen'}:{color:'red'}}>{salesforceStatus}</p>
+          <p>{salesforceStatus}</p>
         </div>
         <div className='statusA'>
           <h2 className='title'>
             TCI
           </h2>
-          <p style={tciStatus.includes("200") ? {color:'yellowgreen'}:{color:'red'}}>{tciStatus}</p>
+          <p>{tciStatus}</p>
         </div>
         <div className='statusA'>
         <h2 className='title'>
             Box
         </h2>
-        <p style={boxStatus.includes("200") ? {color:'yellowgreen'}:{color:'red'}}>{boxStatus}</p>
+        <p>{boxStatus}</p>
         </div>
         <div className='statusA'>
         <h2 className='title'>
             Schwab
         </h2>
-        <p style={schwabStatus.includes("200") ? {color:'yellowgreen'}:{color:'red'}}>{schwabStatus}</p>
+        <p>{schwabStatus}</p>
         </div>
         <div className='statusA'>
         <h2 className='title'>
             Office
         </h2>
-        <p style={officeStatus.includes("200") ? {color:'yellowgreen'}:{color:'red'}}>{officeStatus}</p>
+        <p>{officeStatus}</p>
         </div>
         <div className='refresh'>
             <a className="fas fa-sync-alt" href="http://localhost:3000/"></a>
@@ -225,32 +221,32 @@ console.log(salesforceStatus)
           <h2 className='title'>
             TDA
           </h2>
-          <p style={tdaStatus.includes("200") ? {color:'yellowgreen'}:{color:'red'}}>{tdaStatus}</p>
+          <p>{tdaStatus}</p>
         </div>
         <div className='statusB'>
           <h2 className='title'>
             LastPass
           </h2>
-          <p style={lastpassStatus.includes('200') ? {color:'yellowgreen'}:{color:'red'}}>{lastpassStatus}</p>
+          <p>{lastpassStatus}</p>
         </div>
         <div className='statusB'>
           <h2 className='title'>
             Network
           </h2>
           <p>{usersIP}</p>
-          <p style={usersIP.includes("74.93.39.173") ? {color:'yellowgreen'}:{color:'red'}}>{isPrimaryNetwork}</p>
+          <p>{isPrimaryNetwork}</p>
         </div>
         <div className='statusB'>
           <h2 className='title'>
             Tamarac
           </h2>
-          <p style={tamaracStatus.includes("200") ? {color:'yellowgreen'}:{color:'red'}}>{tamaracStatus}</p>
+          <p>{tamaracStatus}</p>
         </div>
         <div className='statusB'>
           <h2 className='title'>
             Zoom
           </h2>
-          <p style={zoomStatus.includes("200") ? {color:'yellowgreen'}:{color:'red'}}>{zoomStatus}</p>
+          <p>{zoomStatus}</p>
         </div>
         
       </header>
