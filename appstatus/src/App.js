@@ -11,7 +11,6 @@ function App() {
   const [officeStatus, setofficeStatus] = useState()
   const [tdaStatus, settdaStatus] = useState()
   const [lastpassStatus, setlastpassStatus] = useState()
-  // const [mitelStatus, setmitelStatus] = useState([])
   const [tamaracStatus, settamaracStatus] = useState([])
   const [zoomStatus, setzoomStatus] = useState()
   const [usersIP, setusersIP] = useState()
@@ -22,12 +21,11 @@ function App() {
   const primaryNetwork = '74.93.39.173'
 
   async function getSalesforceStatus() {
-    const result = await axios
+    await axios
     .get(proxy + "https://tciwealthadvisors.lightning.force.com/one/one.app")
     .then(res => {
       const salesforceStatus = JSON.stringify(res.status + ' ' + res.statusText)
       setsalesforceStatus(salesforceStatus.replace(/['"]+/g, ''))
-      console.log(salesforceStatus)
     })
     .catch(error => {
       const salesforceStatus = JSON.stringify(error.response.status + ' ' + error.response.statusText)
@@ -39,7 +37,7 @@ function App() {
     }, []);
 
   async function getTCIStatus() {
-    const result = await axios
+    await axios
     .get(proxy + "https://tciwealth.com/")
     .then(res => {
       const tciStatus = JSON.stringify(res.status + ' ' + res.statusText)
@@ -55,7 +53,7 @@ function App() {
     }, []);
 
   async function getBoxStatus() {
-    const result = await axios
+    await axios
     .get(proxy + "https://tciwealth.app.box.com/folder/0")
     .then(res => {
       const boxStatus = JSON.stringify(res.status + ' ' + res.statusText)
@@ -71,7 +69,7 @@ function App() {
     }, []);
 
   async function getSchwabStatus() {
-    const result = await axios
+    await axios
     .get(proxy + "https://si2.schwabinstitutional.com/SI2/Home/Default.aspx")
     .then(res => {
       const schwabStatus = JSON.stringify(res.status + ' ' + res.statusText)
@@ -87,7 +85,7 @@ function App() {
     }, []);
 
   async function getOfficeStatus() {
-    const result = await axios
+    await axios
     .get(proxy + "https://outlook.office.com/mail/")
     .then(res => {
       const officeStatus = JSON.stringify(res.status + ' ' + res.statusText)
@@ -103,7 +101,7 @@ function App() {
     }, []);
 
   async function getTDAStatus() {
-    const result = await axios
+    await axios
     .get(proxy + "https://www.tdameritrade.com/")
     .then(res => {
       const tdaStatus = JSON.stringify(res.status + ' ' + res.statusText)
@@ -119,7 +117,7 @@ function App() {
     }, []);
 
   async function getLastPassStatus() {
-    const result = await axios
+    await axios
     .get(proxy + "https://identity.lastpass.com/#justloggedin")
     .then(res => {
       const lastpassStatus = JSON.stringify(res.status + ' ' + res.statusText)
@@ -135,7 +133,7 @@ function App() {
     }, []);
 
   async function getusersIP() {
-    const result = await axios
+    await axios
     .get(proxy + 'https://api.ipify.org?format=json')
     .then(res => {
       const usersIP = JSON.stringify(res.data.ip)
@@ -153,7 +151,7 @@ function App() {
   }
 
   async function getTamaracStatus() {
-    const result = await axios
+    await axios
     .get(proxy + "https://portal.tamaracinc.com/Dashboard.aspx")
     .then(res => {
       const tamaracStatus = JSON.stringify(res.status + ' ' + res.statusText)
@@ -169,7 +167,7 @@ function App() {
     }, []);
 
   async function getZoomStatus() {
-    const result = await axios
+    await axios
     .get(proxy + "https://tciwealth.zoom.us/meeting#/upcoming")
     .then(res => {
       const zoomStatus = JSON.stringify(res.status + ' ' + res.statusText)
@@ -185,7 +183,7 @@ function App() {
     }, []);
 
   async function getEmoneyStatus() {
-    const result = await axios
+    await axios
     .get(proxy + "https://www.emoney.com/")
     .then(res => {
       const emoneyStatus = JSON.stringify(res.status + ' ' + res.statusText)
@@ -201,7 +199,7 @@ function App() {
     }, []);
 
   async function getNintexStatus() {
-    const result = await axios
+    await axios
     .get(proxy + "https://www.nintex.com/")
     .then(res => {
       const nintexStatus = JSON.stringify(res.status + ' ' + res.statusText)
