@@ -240,7 +240,7 @@ function App() {
           <p style={boxStatus ? (boxStatus.includes("200") ? {color:'yellowgreen'}:{color:'red'}) : {color:'white'}}>{boxStatus}</p>
           </div>
           <div className='status'>
-          <a target="_blank" rel="noopener noreferrer" className='title' href="https://si2.schwabinstitutional.com/SI2/Home/Default.aspx">
+          <a target="_blank" rel="noopener noreferrer" className='title' href="https://downdetector.com/status/charles-schwab/">
               Schwab
           </a>
           <p style={schwabStatus ? (schwabStatus.includes("200") ? {color:'yellowgreen'}:{color:'red'}) : {color:'white'}}>{schwabStatus}</p>
@@ -271,8 +271,8 @@ function App() {
             <p style={usersIP === ("74.93.39.173") ? {color:'yellowgreen'}:{color:'red'}}>{isPrimaryNetwork}</p>
           </div>
           <div className='status'>
-            <a target="_blank" rel="noopener noreferrer" className='title' href="https://www.tamaracinc.com/">
-              Tamarac
+            <a target="_blank" rel="noopener noreferrer" className='title' href="https://status.cloud.com/">
+              Tamarac/Citrix
             </a>
             <p style={tamaracStatus ? (tamaracStatus.includes("200") ? {color:'yellowgreen'}:{color:'red'}) : {color:'white'}}>{tamaracStatus}</p>
           </div>
