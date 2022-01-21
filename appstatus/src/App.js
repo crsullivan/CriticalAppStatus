@@ -218,7 +218,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div className='refresh'>
-            <a title='Refresh Page' className="fas fa-sync-alt" href="http://localhost:3000/"> Refresh</a>
+            <a title='Refresh Page' className="fas fa-sync-alt" href="https://critical-app-status.vercel.app/"> Refresh</a>
         </div>
         <div className='Status-Container'>
           <div className='status'>
