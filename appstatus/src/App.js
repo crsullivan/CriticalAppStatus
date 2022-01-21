@@ -264,9 +264,9 @@ function App() {
             <p style={lastpassStatus ? (lastpassStatus.includes("200") ? {color:'yellowgreen'}:{color:'red'}) : {color:'white'}}>{lastpassStatus}</p>
           </div>
           <div className='status'>
-            <a target="_blank" rel="noopener noreferrer" className='title'>
+            <p>
               Network
-            </a>
+            </p>
             <p className='ip'>{usersIP}</p>
             <p style={usersIP === ("74.93.39.173") ? {color:'yellowgreen'}:{color:'red'}}>{isPrimaryNetwork}</p>
           </div>
