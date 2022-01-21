@@ -39,7 +39,7 @@
   flex-wrap: wrap;
   margin: auto;
   height: 70%;
-  width: 80%;
+  width: 85%;
   justify-content: center;
 }
 
@@ -51,7 +51,6 @@
   border-radius: 10%;
   display: flex;
   flex-direction: column;
-
 }
 
 a.title {

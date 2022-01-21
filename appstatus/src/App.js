@@ -16,6 +16,8 @@ function App() {
   const [usersIP, setusersIP] = useState()
   const [emoneyStatus, setemoneyStatus] = useState()
   const [nintexStatus, setnintexStatus] = useState()
+  const [docusignStatus, setdocusignStatus] = useState()
+
 
   const proxy = 'https://criticalappcorsproxy.herokuapp.com/'
   const primaryNetwork = '74.93.39.173'
@@ -214,6 +216,22 @@ function App() {
     getNintexStatus();
     }, []);
 
+  async function getDocusignStatus() {
+    await axios
+    .get(proxy + "https://www.docusign.com/")
+    .then(res => {
+      const docusignStatus = JSON.stringify(res.status + ' ' + res.statusText)
+      setdocusignStatus(docusignStatus.replace(/['"]+/g, ''))
+    })
+    .catch(error => {
+      const docusignStatus = JSON.stringify(error.response.status + ' ' + error.response.statusText)
+      setdocusignStatus(docusignStatus.replace(/['"]+/g, ''))
+    })
+  }
+  useEffect(() => {
+    getDocusignStatus();
+    }, []);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -293,6 +311,12 @@ function App() {
               Nintex
             </a>
             <p style={nintexStatus ? (nintexStatus.includes("200") ? {color:'yellowgreen'}:{color:'red'}) : {color:'white'}}>{nintexStatus}</p>
+          </div>
+          <div className='status'>
+            <a target="_blank" rel="noopener noreferrer" className='title' href="https://status.docusign.com/">
+              DocuSign
+            </a>
+            <p style={docusignStatus ? (docusignStatus.includes("200") ? {color:'yellowgreen'}:{color:'red'}) : {color:'white'}}>{nintexStatus}</p>
           </div>
         </div>
       </header>
