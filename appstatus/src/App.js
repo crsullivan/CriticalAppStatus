@@ -4,6 +4,7 @@ import './App.css';
 
 function App() {
 
+  // Set State for each site to check in on
   const [salesforceStatus, setsalesforceStatus] = useState()
   const [tciStatus, settciStatus] = useState()
   const [boxStatus, setboxStatus] = useState([])
@@ -19,9 +20,12 @@ function App() {
   const [docusignStatus, setdocusignStatus] = useState()
 
 
+  // This Proxy is the 'Backend', to hanlde CORS issues. All requests need to go through it.
   const proxy = 'https://criticalappcorsproxy.herokuapp.com/'
+  // Static IP to cross refence
   const primaryNetwork = '74.93.39.173'
 
+  // Ping each server, return stringified status code and status text and save it in state management
   async function getSalesforceStatus() {
     await axios
     .get(proxy + "https://tciwealthadvisors.lightning.force.com/one/one.app")
